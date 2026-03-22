@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFRA — Brand & Communications Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #000333;
+    --blue: #1d4fc4;
+    --gold: #b28635;
+    --gold-light: #e8d5a3;
+    --white: #ffffff;
+    --off-white: #f5f3ee;
+    --gray-light: #e8e6e0;
+    --gray-mid: #9a9690;
+    --gray-dark: #3a3830;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--off-white);
+    color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(178, 134, 53, 0.2);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(178, 134, 53, 0.15);
+    border-radius: 50%;
+  }
+
+  .header-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 46px;
+    line-height: 1.1;
+    color: var(--white);
+    max-width: 520px;
+    margin-bottom: 20px;
+  }
+
+  .header h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  .header-meta {
+    margin-top: 36px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .meta-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* BODY */
+  .body {
+    padding: 56px 64px;
+    display: grid;
+    gap: 48px;
+  }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  /* POSITIONING BLOCK */
+  .positioning-block {
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+  }
+
+  .positioning-headline {
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .positioning-body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--gray-dark);
+  }
+
+  /* PROBLEM / INSIGHT ROW */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .insight-card {
+    background: var(--off-white);
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    padding: 24px;
+  }
+
+  .insight-card h3 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .insight-card p {
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--gray-dark);
+  }
+
+  .insight-card .stat {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--blue);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .insight-card .stat-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-mid);
+    letter-spacing: 0.04em;
+  }
+
+  /* STRATEGY PILLARS */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .pillar {
+    background: var(--white);
+    padding: 28px 24px;
+  }
+
+  .pillar-number {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .pillar h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+
+  .pillar p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--gray-dark);
+  }
+
+  /* VOICE EXAMPLES */
+  .voice-examples {
+    display: grid;
+    gap: 16px;
+  }
+
+  .voice-card {
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .voice-tag {
+    background: var(--navy);
+    padding: 8px 16px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .voice-tag span {
+    color: var(--gold);
+  }
+
+  .voice-copy {
+    padding: 20px 24px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--gray-dark);
+    font-style: italic;
+  }
+
+  /* COLOUR + TONE GRID */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .brand-colors {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .swatch-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .swatch-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--gray-mid);
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .tone-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tone-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .tone-from {
+    font-weight: 400;
+    color: var(--gray-mid);
+    text-decoration: line-through;
+    flex: 1;
+  }
+
+  .tone-arrow {
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  .tone-to {
+    font-weight: 500;
+    color: var(--navy);
+    flex: 1;
+  }
+
+  /* OUTCOMES */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .outcome-card {
+    text-align: center;
+    padding: 28px 20px;
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .outcome-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .outcome-number {
+    font-family: var(--serif);
+    font-size: 40px;
+    color: var(--blue);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .outcome-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-mid);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 32px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-brand span {
+    color: var(--gold);
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.04em;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--gray-light);
+  }
+
+  @media (max-width: 700px) {
+    .header, .body, .footer { padding-left: 28px; padding-right: 28px; }
+    .header h1 { font-size: 32px; }
+    .insight-grid, .pillars, .outcomes-grid, .brand-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">Brand & Communications Strategy — Portfolio Sample</div>
+    <h1>Preventing psychological injury <em>before</em> crisis.</h1>
+    <p class="header-sub">Alberta First Responders Association — built the marketing function from near-zero for a province-wide mental health campaign in a culture that prizes stoicism.</p>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Volunteer CMO</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Organization</span>
+        <span class="meta-value">Alberta First Responders Association</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Scope</span>
+        <span class="meta-value">Brand, Campaign & Comms Strategy</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">2023 – Present</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- POSITIONING -->
+    <div>
+      <div class="section-label">Strategic Positioning</div>
+      <div class="positioning-block">
+        <p class="positioning-headline">AFRA doesn't talk about mental health as a crisis resource. It positions mental health as professional standard of care.</p>
+        <p class="positioning-body">Most first responder mental health communications lead with trauma statistics and crisis intervention language. That approach activates shame, not behavior change. AFRA's brand strategy flipped the frame — normalizing peer support as part of the job, not an admission of failure. The positioning anchors on the idea that psychological fitness is the same as physical fitness. It's not weakness to train. It's how you stay on the job.</p>
+      </div>
+    </div>
+
+    <!-- INSIGHT GRID -->
+    <div>
+      <div class="section-label">The Brief</div>
+      <div class="insight-grid">
+        <div class="insight-card">
+          <h3>The core tension</h3>
+          <p>First responders are trained to push through. Asking for help runs against the grain of professional identity. Communications that lead with vulnerability don't land with this audience — they confirm the stigma.</p>
+        </div>
+        <div class="insight-card">
+          <h3>The data behind it</h3>
+          <p>792 psychological injury WCB claims filed in Alberta in 2021. 227 denied. The system wasn't built for these workers. AFRA's communications had to address the gap — not as advocates, but as peers.</p>
+        </div>
+        <div class="insight-card">
+          <span class="stat">2,200+</span>
+          <span class="stat-label">Active members reached across Alberta</span>
+        </div>
+        <div class="insight-card">
+          <span class="stat">50K+</span>
+          <span class="stat-label">Alberta first responders in addressable audience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STRATEGY PILLARS -->
+    <div>
+      <div class="section-label">Communications Strategy</div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-number">01</span>
+          <h3>Peer voice first</h3>
+          <p>Institutional voice creates distance. Peer voice creates permission. Every campaign leads with the voices of first responders — not clinicians, not executives. Someone like you, saying it's okay.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-number">02</span>
+          <h3>Frame before you ask</h3>
+          <p>Don't lead with asks or resources. Lead with reframing. The audience has to believe the premise before they'll accept the offering. Every post earns the CTA rather than opening with it.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-number">03</span>
+          <h3>Stay in the culture</h3>
+          <p>Language matters more here than in almost any other sector. Copy uses operational vocabulary and respects the stoicism — it doesn't fight it. Strength framing, not vulnerability framing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TONE OF VOICE -->
+    <div>
+      <div class="section-label">Tone of Voice</div>
+      <div class="brand-grid">
+        <div>
+          <div class="tone-block">
+            <div class="tone-row">
+              <span class="tone-from">It's okay to ask for help</span>
+              <span class="tone-arrow">→</span>
+              <span class="tone-to">Seeking support keeps you in the job</span>
+            </div>
+            <div class="tone-row">
+              <span class="tone-from">Mental health resources</span>
+              <span class="tone-arrow">→</span>
+              <span class="tone-to">Peer networks built by first responders</span>
+            </div>
+            <div class="tone-row">
+              <span class="tone-from">Awareness campaign</span>
+              <span class="tone-arrow">→</span>
+              <span class="tone-to">Culture shift, delivered in plain language</span>
+            </div>
+            <div class="tone-row">
+              <span class="tone-from">We support you</span>
+              <span class="tone-arrow">→</span>
+              <span class="tone-to">We built this because we lived it</span>
+            </div>
+            <div class="tone-row">
+              <span class="tone-from">Stigma reduction</span>
+              <span class="tone-arrow">→</span>
+              <span class="tone-to">Normalization through repetition</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="background: var(--off-white); border: 1px solid var(--gray-light); border-radius: 4px; padding: 20px;">
+            <p style="font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px;">Brand colors</p>
+            <div class="brand-colors">
+              <div class="swatch-group">
+                <div class="swatch" style="background: #000333;"></div>
+                <span class="swatch-label">Navy<br>#000333</span>
+              </div>
+              <div class="swatch-group">
+                <div class="swatch" style="background: #1d4fc4;"></div>
+                <span class="swatch-label">Blue<br>#1d4fc4</span>
+              </div>
+              <div class="swatch-group">
+                <div class="swatch" style="background: #b28635;"></div>
+                <span class="swatch-label">Gold<br>#b28635</span>
+              </div>
+              <div class="swatch-group">
+                <div class="swatch" style="background: #ffffff; border: 1px solid #ddd;"></div>
+                <span class="swatch-label">White<br>#ffffff</span>
+              </div>
+            </div>
+            <p style="font-size: 12px; margin-top: 16px; font-weight: 300; line-height: 1.6; color: var(--gray-dark);">Navy anchors authority. Blue signals trust. Gold is the warmth — it shows up in accent moments, not in bulk. Together they read institutional without feeling cold.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- COPY EXAMPLES -->
+    <div>
+      <div class="section-label">Copy in Practice</div>
+      <div class="voice-examples">
+
+        <div class="voice-card">
+          <div class="voice-tag">
+            Founding Story — LinkedIn <span>Peer credibility post</span>
+          </div>
+          <div class="voice-copy">
+            "Jerry Galliford didn't launch this organization from a boardroom or a research paper. He launched it because he lived the reality too many first responders face: silent suffering that nearly costs everything... So he built what didn't exist."
+          </div>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-tag">
+            Vendor Campaign — Career Fair <span>LinkedIn / B2B recruitment</span>
+          </div>
+          <div class="voice-copy">
+            "Alberta's only First Responder Career Fair is coming September 26. If your organization hires in emergency services, law enforcement, or EMS — this is your room. One day. One venue. The candidates you're actually looking for."
+          </div>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-tag">
+            Attendee Campaign — Career Fair <span>Facebook / public awareness</span>
+          </div>
+          <div class="voice-copy">
+            "Thinking about a career in public service? This is your day. The Alberta First Responders Career Fair is free to attend, open to everyone, and brings together fire, police, EMS, military and more — all under one roof in Edmonton on September 26. You don't need a resume. You need to show up."
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div>
+      <div class="section-label">Outcomes</div>
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <span class="outcome-number">2,200+</span>
+          <span class="outcome-label">Active members in province-wide peer network</span>
+        </div>
+        <div class="outcome-card">
+          <span class="outcome-number">50K+</span>
+          <span class="outcome-label">Alberta first responders in addressable reach</span>
+        </div>
+        <div class="outcome-card">
+          <span class="outcome-number">3</span>
+          <span class="outcome-label">Institutional partners — EPS, AFRA, Prospect Human Services</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-brand">Alberta First Responders <span>Association</span></div>
+      <div class="footer-tagline" style="margin-top: 4px;">Seek support. Stay connected.</div>
+    </div>
+    <div style="text-align: right;">
+      <div class="footer-tagline">Portfolio sample prepared by Vaishally Bhatti</div>
+      <div class="footer-tagline" style="margin-top: 3px;">Brand & Communications Strategy — 2023–2026</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

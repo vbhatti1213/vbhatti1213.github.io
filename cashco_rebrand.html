@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cashco Brand Repositioning — Vaishally Bhatti</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --ink: #1A1714;
+    --ink-soft: #4A4540;
+    --ink-muted: #8A837A;
+    --rust: #C4471A;
+    --rust-soft: #F0E8E3;
+    --gold: #B8892A;
+    --gold-soft: #F5EDD8;
+    --green: #2D6B27;
+    --green-soft: #EAF3E8;
+    --border: rgba(26,23,20,0.12);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    margin-bottom: 3rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--rust); }
+
+  .doc-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 em { font-style: italic; color: var(--rust); }
+
+  .doc-meta {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* BHAG BLOCK */
+  .bhag {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 2.5rem;
+    border-radius: 4px;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .bhag-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust-soft);
+    margin-bottom: 1rem;
+  }
+
+  .bhag-statement {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  .bhag-statement span { color: #E8A87C; }
+
+  /* INSPIRATION */
+  .inspiration {
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  .inspiration strong { color: var(--ink); font-weight: 600; }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  /* FROM / TO TABLE */
+  .transform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .transform-header {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .from-header {
+    background: #F0EBE6;
+    color: var(--rust);
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .to-header {
+    background: var(--green-soft);
+    color: var(--green);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .transform-row {
+    display: contents;
+  }
+
+  .from-cell, .to-cell {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .from-cell {
+    background: #fff;
+    color: var(--ink-soft);
+    border-right: 1px solid var(--border);
+    text-decoration: line-through;
+    text-decoration-color: rgba(196,71,26,0.3);
+  }
+
+  .to-cell {
+    background: #fff;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .from-cell:last-of-type, .to-cell:last-of-type {
+    border-bottom: none;
+  }
+
+  /* PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .pillar-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.25rem;
+  }
+
+  .pillar-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0.4;
+  }
+
+  .pillar-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* PROGRAMS */
+  .programs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .program-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .program-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rust);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .program-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .program-desc {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* OUTCOMES */
+  .outcomes-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .outcome-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.1rem 1.25rem;
+    text-align: center;
+  }
+
+  .outcome-num {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .outcome-label {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 2rem 1.25rem 4rem; }
+    .transform-grid { grid-template-columns: 1fr; }
+    .from-header { border-right: none; }
+    .from-cell { border-right: none; text-decoration: none; }
+    .from-cell::before { content: "From: "; font-weight: 600; color: var(--rust); }
+    .to-cell::before { content: "To: "; font-weight: 600; color: var(--green); }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html">← Back to portfolio</a>
+
+<p class="doc-eyebrow">Brand Repositioning — Strategic Overview</p>
+<h1>From payday stigma<br>to <em>purpose-led ally</em></h1>
+<p class="doc-meta">Cashco Financial · 2019–2023 · Vaishally Bhatti, Director Brand & Insights</p>
+
+<div class="bhag">
+  <p class="bhag-label">The BHAG</p>
+  <p class="bhag-statement">"Put <span>1 Million Canadians</span> on a Pathway to Financial Health."</p>
+</div>
+
+<div class="inspiration">
+  <strong>Social impact positioning.</strong> Cashco was built on a founder's belief that financial services should offer a hand up, not a handout — that people navigating financial hardship deserve dignity, real tools, and a genuine pathway forward. The repositioning brought that belief to the surface: from transactional lender to purpose-led brand grounded in real stories and real impact. Our promise was simple — <em>Hope today. Relief for tomorrow.</em> Every brand decision, product experience, and community program was built to make that promise felt.
+</div>
+
+<p class="section-label">The Transformation — From / To</p>
+<div class="transform-grid">
+  <div class="transform-header from-header">The old narrative</div>
+  <div class="transform-header to-header">The Cashco way</div>
+
+  <div class="from-cell">Payday loans</div>
+  <div class="to-cell">Wage advances that respect your dignity</div>
+
+  <div class="from-cell">Short-term goals only</div>
+  <div class="to-cell">Long-term financial health as the destination</div>
+
+  <div class="from-cell">50-30-20 budgets (built for Prime earners)</div>
+  <div class="to-cell">80-10-10 budgets — needs, good spend, splurge spend</div>
+
+  <div class="from-cell">6-month emergency savings as the benchmark</div>
+  <div class="to-cell">1-month emergency savings as a real starting point</div>
+
+  <div class="from-cell">"Prime" credit scores as the only measure of worth</div>
+  <div class="to-cell">A new credit model not correlated to income</div>
+
+  <div class="from-cell">Bankruptcy as stigma</div>
+  <div class="to-cell">Bankruptcy as reset — credit consolidation as a pathway forward</div>
+
+  <div class="from-cell">Buying a house as the only housing goal</div>
+  <div class="to-cell">Rental housing security as a legitimate, worthy milestone</div>
+
+  <div class="from-cell">Comprehensive monthly budgets that overwhelm</div>
+  <div class="to-cell">1 or 2 category weekly budgets that actually stick</div>
+</div>
+
+<p class="section-label">Brand Pillars</p>
+<div class="pillars-grid">
+  <div class="pillar-card">
+    <div class="pillar-num">01</div>
+    <div class="pillar-title">Real World Stories</div>
+    <div class="pillar-desc">Client journeys — not stock photography and aspirational copy. Authentic voices from people who had been where our clients were.</div>
+  </div>
+  <div class="pillar-card">
+    <div class="pillar-num">02</div>
+    <div class="pillar-title">Empathy as a Superpower</div>
+    <div class="pillar-desc">Front-line teams trained to meet financial shame and guilt with curiosity and care — not judgment. Every interaction is a brand moment.</div>
+  </div>
+  <div class="pillar-card">
+    <div class="pillar-num">03</div>
+    <div class="pillar-title">The Pathway, Not the Product</div>
+    <div class="pillar-desc">Every touchpoint — from ad to approval to recovery — reinforced a single idea: this is the beginning of something better, not a last resort.</div>
+  </div>
+  <div class="pillar-card">
+    <div class="pillar-num">04</div>
+    <div class="pillar-title">Financial Literacy as Brand</div>
+    <div class="pillar-desc">Education wasn't a CSR add-on. It was woven into the product experience — proving that Cashco's interest was in clients graduating, not staying.</div>
+  </div>
+</div>
+
+<p class="section-label">Financial Literacy Programs Built</p>
+<div class="programs-list">
+  <div class="program-item">
+    <div class="program-dot"></div>
+    <div>
+      <div class="program-name">Wealthing Like Rabbits — Customized Edition</div>
+      <div class="program-desc">Co-developed a Cashco-branded version of the national bestseller tailored to alternative lending clients and their real financial starting points.</div>
+    </div>
+  </div>
+  <div class="program-item">
+    <div class="program-dot"></div>
+    <div>
+      <div class="program-name">The Bunny's Talk Money Book</div>
+      <div class="program-desc">Original financial literacy book for ages 5–8. Built to start money conversations at home — because financial shame starts early.</div>
+    </div>
+  </div>
+  <div class="program-item">
+    <div class="program-dot"></div>
+    <div>
+      <div class="program-name">80-10-10 Budget Framework</div>
+      <div class="program-desc">A simplified budgeting model designed for clients who can't sustain traditional budget structures — needs, intentional spend, and joy spend.</div>
+    </div>
+  </div>
+  <div class="program-item">
+    <div class="program-dot"></div>
+    <div>
+      <div class="program-name">Credit Pathway Program</div>
+      <div class="program-desc">A staged credit-building model that rewarded milestones rather than penalized starting points — decoupling creditworthiness from income.</div>
+    </div>
+  </div>
+</div>
+
+<p class="section-label">Outcomes</p>
+<div class="outcomes-row">
+  <div class="outcome-card">
+    <div class="outcome-num">$40M</div>
+    <div class="outcome-label">Loan book built during repositioning tenure</div>
+  </div>
+  <div class="outcome-card">
+    <div class="outcome-num">90%+</div>
+    <div class="outcome-label">Client sentiment scores post-rebrand</div>
+  </div>
+  <div class="outcome-card">
+    <div class="outcome-num">2</div>
+    <div class="outcome-label">Penguin Awards for innovation in financial services</div>
+  </div>
+</div>
+
+<div class="doc-footer">
+  <span>Vaishally Bhatti · Cashco Financial Brand Repositioning</span>
+  <span>Portfolio document · 2019–2023</span>
+</div>
+
+</body>
+</html>
